@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="system.dao.DataDictionaryMapper">
+
+    <resultMap type="system.entity.DataDictionary" id="DataDictionary">
+        <id     column="snode"   property="node" />
+        <result column="sparent" property="parent"/>
+        <result column="slevel"  property="level"/>
+        <result column="sname"   property="name"/>
+        <result column="svalue"  property="value"/>
+        <result column="ssort"   property="sort"/>
+        <result column="sshow"   property="show"/>
+        <result column="sbody"   property="body"/>
+        <result column="szt"     property="state"/>
+    </resultMap>
+
+    <!-- 查询-->
+    <select id="getInfoById" resultMap="DataDictionary" >
+        SELECT snode, sparent, slevel, sname, svalue, ssort, sbody
+        FROM bd_sjzd a WHERE snode = #{id};
+    </select>
+
+    <!-- 查询-->
+    <select id="getInfoByParnetAndValue" resultMap="DataDictionary" >
+        SELECT snode, sparent, slevel, sname, svalue, ssort, sbody
+        FROM bd_sjzd a WHERE sparent = #{parent} AND svalue = #{value};
+    </select>
+
+</mapper>

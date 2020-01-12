@@ -1,0 +1,14 @@
+system\entity\DataDictionary.class
+user\dao\UserMapper.class
+user\entity\Dept.class
+user\entity\User.class
+nl\pub\utils\keyUtil.class
+nl\spring\util\SpringBeanUtil.class
+user\service\imp\UserServiceImp.class
+system\utils\DataDictionaryUtil.class
+user\controller\UserController.class
+nl\pub\utils\SnowflakeIdWorker.class
+system\dao\DataDictionaryMapper.class
+system\service\imp\DataDictionaryServiceImp.class
+system\service\DataDictionaryService.class
+user\service\UserService.class
