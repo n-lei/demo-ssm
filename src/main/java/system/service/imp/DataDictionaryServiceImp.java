@@ -45,10 +45,4 @@ public class DataDictionaryServiceImp implements DataDictionaryService {
     public boolean update(DataDictionary dataDictionary) {
         return false;
     }
-
-    public static void main(String[] args){
-        System.out.println(1);
-        DataDictionaryServiceImp di = new DataDictionaryServiceImp();
-        DataDictionary d = di.getInfoById("100101");
-    }
 }

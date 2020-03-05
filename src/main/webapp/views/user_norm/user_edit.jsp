@@ -30,7 +30,7 @@ function setSelectEditValue(){
 </script>
 </head>
 <body>
-    <form method="post" action="${ctx}/user/doSubmit" >
+    <form method="post" action="${ctx}/userNorm/doSubmit" >
         <!-- 设置隐藏id-->
         <input type="hidden" id="id"     name="id"     value="${user.id == null ? 0 : user.id}" />
         <input type="hidden" id="model"  name="model"  value="user" />
@@ -74,7 +74,7 @@ function setSelectEditValue(){
             </tr>
             <tr>
                 <td>
-                    <a href="${ctx}/user/listAllUsers">返回</a>
+                    <a href="${ctx}/userNorm/listAllUsers">返回</a>
                 </td>
                 <td>
                     <input type="submit" value="提交"/>

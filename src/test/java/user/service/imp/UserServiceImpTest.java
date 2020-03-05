@@ -1,5 +1,6 @@
 package user.service.imp;
 
+import com.github.pagehelper.PageInfo;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import pub.spring.SpringPubTest;
@@ -13,9 +14,18 @@ public class UserServiceImpTest extends SpringPubTest {
     private UserServiceImp userService;
 
     @Test
-    public void getUserList1() {
-        List<User> list = userService.getUserList();
+    public void getAllList() {
+        List<User> list = userService.getAllList();
         System.out.println(list);
+    }
+
+    @Test
+    public void getPageList(){
+        PageInfo<User> user = userService.getPageList(1 ,10, 6);
+        System.out.println(user);
+        /*System.out.println(user.getList());
+        System.out.println(user.getPages());
+        System.out.println(user.getPageNum());*/
     }
 
     @Test

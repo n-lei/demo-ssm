@@ -26,7 +26,7 @@ public class User_NormController {
     @RequestMapping("/listAllUsers")
     public ModelAndView listAllUsers(){
         ModelAndView mav = new ModelAndView(webRootFile + "user_list");
-        mav.addObject("user", userService.getUserList());
+        mav.addObject("user", userService.getAllList());
         System.out.println("------mav:" + mav.toString());
         return mav;
     }

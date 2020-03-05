@@ -16,7 +16,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <h1 align="center">用户信息列表</h1>
     <span style="float: right;padding-right: 10px;">
-        <button onclick="location.href='${ctx}/user/goAdd'" style="font-size:18px;">新增</button>
+        <button onclick="location.href='${ctx}/userNorm/goAdd'" style="font-size:18px;">新增</button>
     </span>
     <table align="center" border="1" width="100%" cellspacing="0px">
         <tr>
@@ -57,8 +57,7 @@
      * @param id
      */
     function editById(id) {
-        location.href='${ctx}/user/goEdit/' + id;
-        //location.href='${ctx}/user/goEdit?id=' + id;
+        location.href='${ctx}/userNorm/goEdit/' + id;
     }
 
     /**
@@ -67,7 +66,7 @@
      */
     function deleteById(id) {
         if(confirm("确定要删除该条数据吗?")){
-            location.href='${ctx}/user/delete?id=' + id;
+            location.href='${ctx}/userNorm/delete?id=' + id;
         }
     }
 </script>

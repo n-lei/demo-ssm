@@ -8,9 +8,9 @@
         a.userId, a.utype, a.username, a.usex, a.udnode, a.uxid
     </sql>
     <!-- 查询所有员工和部门信息-->
-    <select id="getUserList" resultMap="UserAndDept">
+    <select id="getAllList" resultMap="UserAndDept">
         SELECT <include refid="user_column_list"/>, b.dnode, b.dparent, b.dlevel, b.dcode, b.dname
-        FROM bd_user a, bd_dept b WHERE a.udnode = b.dnode AND uisdel = 0 ORDER BY userid DESC limit 20
+        FROM bd_user a, bd_dept b WHERE a.udnode = b.dnode AND uisdel = 0 ORDER BY userid DESC
     </select>
 
     <resultMap type="user.entity.User" id="UserAndDept">

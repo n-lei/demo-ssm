@@ -9,7 +9,7 @@ public interface UserMapper {
      * 查询用户list信息
      * @return
      */
-    List<User> getUserList();
+    List<User> getAllList();
 
     /**
      * 保存用户

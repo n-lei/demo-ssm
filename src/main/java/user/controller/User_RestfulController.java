@@ -35,7 +35,7 @@ public class User_RestfulController {
     @GetMapping("")
     public ModelAndView goList(){
         ModelAndView mav = new ModelAndView(listPageUrl);
-        mav.addObject("data", userService.getUserList());
+        mav.addObject("data", userService.getAllList());
         System.out.println("------mav:" + mav.toString());
         return mav;
     }
