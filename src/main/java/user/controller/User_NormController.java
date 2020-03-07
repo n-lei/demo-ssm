@@ -1,6 +1,6 @@
 package user.controller;
 
-import nl.pub.utils.keyUtil;
+import nl.pub.utils.KeyUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -111,7 +111,7 @@ public class User_NormController {
      * 添加数据之后跳转到列表页面
      */
     public ModelAndView doAdd(User user){
-        user.setId(keyUtil.nextId());
+        user.setId(KeyUtil.nextId());
         userService.save(user);
         return goToListAllUsers();
     }

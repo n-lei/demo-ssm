@@ -95,10 +95,10 @@
         htmlArray.push("</thead>");
 
         // 取出InfoDTO对象中的员工列表
-        var users = result.data.pageInfo.list;
+        let datas = result.data.pageInfo.list;
         // 遍历集合users, 对于每一条记录，执行回调函数
         // 每一条记录，是一个员工信息，将其信息封装到一个tr中，添加到表格中
-        $.each(users, function (index, data) {
+        $.each(datas, function (index, data) {
             // console.log(data);
             // 每一个属性字段放在一个td里面
             htmlArray.push("<tbody>");

@@ -2,7 +2,7 @@ package user.controller;
 
 import com.github.pagehelper.PageInfo;
 import springMvc.pojo.RespBody;
-import nl.pub.utils.keyUtil;
+import nl.pub.utils.KeyUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -47,9 +47,9 @@ public class UserController {
     @RequestMapping("/paging")
     @ResponseBody
     public RespBody goList(
-            @RequestParam(value = "pageNumber",defaultValue = "1") Integer pageNumber,
-            @RequestParam(value = "pageSize",defaultValue = "10") Integer pageSize,
-            @RequestParam(value = "pageShowNumber",defaultValue = "10") Integer pageShowNumber){
+            @RequestParam(value = "pageNumber", defaultValue = "1") Integer pageNumber,
+            @RequestParam(value = "pageSize", defaultValue = "10") Integer pageSize,
+            @RequestParam(value = "pageShowNumber", defaultValue = "10") Integer pageShowNumber){
         PageInfo<User> pageInfo = userService.getPageList(pageNumber, pageSize, pageShowNumber);
         return RespBody.success().addData("pageInfo", pageInfo);
     }
@@ -71,7 +71,7 @@ public class UserController {
     @PostMapping("")
     @ResponseBody
     public ModelAndView doAdd(User user){
-        user.setId(keyUtil.nextId());
+        user.setId(KeyUtil.nextId());
         userService.save(user);
         return PageUtil.getListPage(this.model);
     }
@@ -82,16 +82,12 @@ public class UserController {
     @PutMapping("")
     @ResponseBody
     public ModelAndView doEdit(User user){
-        System.out.println("------data:" + user.toString());
+//        System.out.println("------data:" + user.toString());
         boolean flag = userService.update(user);
         if(flag){
             return PageUtil.getListPage(this.model);
         } else {
-            return new ModelAndView("redirect:/" + this.model + "/page/" + user.getId());
-            /*ModelAndView mav = PageUtil.getEditPage(editPageUrl);
-            mav.addObject("data", user);
-            System.out.println("------mav:" + mav.toString());
-            return mav;*/
+            return PageUtil.getPage(this.model + "/data/" + user.getId());
         }
     }
 

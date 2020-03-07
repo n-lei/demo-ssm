@@ -23,8 +23,9 @@ public class PageController {
      * 跳转到页面 - 带form待执行方法
      */
     @GetMapping("/{page}/{formMethod}")
-    public ModelAndView gotoPage(@PathVariable("page") String page,
-                           @PathVariable("formMethod") String formMethod){
+    public ModelAndView gotoPage(
+            @PathVariable("page") String page,
+            @PathVariable("formMethod") String formMethod){
         System.out.println("------page:" + page);
         System.out.println("------formMethod:" + formMethod);
         ModelAndView mav = new ModelAndView(page);

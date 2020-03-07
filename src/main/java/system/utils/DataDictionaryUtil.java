@@ -12,7 +12,8 @@ public class DataDictionaryUtil {
      * @param value 值
      */
     public static String getName(String parent, String value){
-        DataDictionaryService dataDictionaryService = SpringBeanUtil.getBean("dataDictionaryServiceImp", DataDictionaryService.class);
+        DataDictionaryService dataDictionaryService =
+                SpringBeanUtil.getBean("dataDictionaryServiceImp", DataDictionaryService.class);
 //        System.out.println("------------[dataDictionaryService]:" + dataDictionaryService);
         DataDictionary dataDictionary = dataDictionaryService.getInfoByParnetAndValue(parent, value);
         if(dataDictionary == null) {

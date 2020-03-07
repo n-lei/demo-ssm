@@ -1,6 +1,6 @@
 package nl.pub.utils;
 
-public class keyUtil {
+public class KeyUtil {
 
     // 雪花算法对象
     private static SnowflakeIdWorker snowflakeIdWorker;

@@ -35,4 +35,12 @@ public class PageUtil {
     public static ModelAndView getListPage(String page) {
         return new ModelAndView("redirect:/" + page);
     }
+
+    /**
+     * 返回指定页面的地址
+     * @return
+     */
+    public static ModelAndView getPage(String page) {
+        return new ModelAndView("redirect:/" + page);
+    }
 }
